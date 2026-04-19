@@ -323,9 +323,11 @@ let googleAuthCallback = async (req, res) => {
         );
         
         // Redirect back to front-end (Angular) with token in query params
-        res.redirect(`http://localhost:4200/login?token=${token}`);
+        const clientUrl = process.env.CLIENT_URL || 'http://localhost:4200';
+        res.redirect(`${clientUrl}/login?token=${token}`);
     } catch (error) {
-        res.redirect("http://localhost:4200/login?error=" + encodeURIComponent(error.message));
+        const clientUrl = process.env.CLIENT_URL || 'http://localhost:4200';
+        res.redirect(`${clientUrl}/login?error=` + encodeURIComponent(error.message));
     }
 }
 

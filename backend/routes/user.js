@@ -17,7 +17,10 @@ Router.post('/login', login)
 Router.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }))
 
 Router.get('/auth/google/callback',
-    passport.authenticate('google', { failureRedirect: 'http://localhost:4200/login', session: false }),
+    passport.authenticate('google', { 
+        failureRedirect: process.env.CLIENT_URL ? `${process.env.CLIENT_URL}/login` : 'http://localhost:4200/login', 
+        session: false 
+    }),
     googleAuthCallback
 )
 
