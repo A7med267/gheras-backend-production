@@ -7,6 +7,15 @@
 2. **إعدادات الـ API**: تم تحديث ملف `environment.prod.ts` ليشير إلى رابط الـ API المباشر: `https://gheras-production-d634.up.railway.app/api`.
 3. **تثبيت الـ Routing**: تم إنشاء/تحديث ملف `vercel.json` لإصلاح مشكلة الـ (404 Error) عند عمل تحديث (Refresh) للفرونت إيند.
 4. **تجهيز السيرفر**: الـ Backend مهيأ لاستقبال الطلبات من رابط الـ Frontend الجديد (CORS Setup).
+10. **ديناميكية الروابط**: تم تحويل كافة الروابط الصلبة (Hardcoded URLs) مثل روابط Google Auth لتستخدم متغيرات البيئة (Environment Variables).
+
+## ⚙️ متغيرات البيئة المطلوبة (Railway Backend):
+يجب التأكد من إضافة المتغيرات التالية في لوحة تحكم Railway للـ Backend:
+- `BACKEND_URL`: رابط الباك إيند (مثلاً: `https://gheras-production-d634.up.railway.app`)
+- `CLIENT_URL`: رابط الفرونت إيند (بعد رفعه على Vercel أو Railway)
+- `GOOGLE_CLIENT_ID` & `GOOGLE_CLIENT_SECRET`: لعمل تسجيل الدخول بـ Google.
+- `SECRET_KEY`: مفتاح التشفير للـ JWT.
+- `MONGO_URI`: رابط قاعدة البيانات.
 
 ## 🚀 الخطوات النهائية للرفع (الفرونت إيند):
 
