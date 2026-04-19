@@ -1,5 +1,8 @@
 {
+  "version": 2,
+  "name": "gheras-frontend",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
-  ]
+  ],
+  "cleanUrls": true
 }
