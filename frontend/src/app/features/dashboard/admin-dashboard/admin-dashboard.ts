@@ -8,7 +8,7 @@ import { CommunityService } from '../../../core/services/community.service';
 import { AlertService } from '../../../core/services/alert.service';
 import { ChangeDetectorRef } from '@angular/core';
 
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-admin-dashboard',
